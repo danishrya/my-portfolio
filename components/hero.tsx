@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '../ui/button'
+// import { Button } from '../ui/button'
 import { ArrowRight, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 

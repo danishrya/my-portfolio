@@ -2,23 +2,27 @@
 
 import { useState, useEffect } from 'react'
 
+type Section = 'hero' | 'about' | 'skills' | 'projects' | 'experience' | 'contact'
+
+import { Dispatch, SetStateAction } from 'react'
+
 interface NavigationProps {
-  activeSection: string
-  setActiveSection: (section: string) => void
+  activeSection: Section
+  setActiveSection: Dispatch<SetStateAction<Section>>
 }
 
 export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Events' },
-    { id: 'contact', label: 'Contact' },
-  ]
+  const navItems: { id: Section; label: string }[] = [
+  { id: 'hero', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Events' },
+  { id: 'contact', label: 'Contact' },
+]
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -26,7 +30,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleClick = (id: string) => {
+  const handleClick = (id: Section) => {
     setActiveSection(id)
     setMenuOpen(false)
     const section = document.getElementById(id)

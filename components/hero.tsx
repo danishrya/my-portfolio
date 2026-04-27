@@ -4,8 +4,10 @@
 import { ArrowRight, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 
+type Section = 'hero' | 'about' | 'skills' | 'projects' | 'experience' | 'contact'
+
 interface HeroProps {
-  setActiveSection: (section: string) => void
+  setActiveSection: (section: Section) => void
 }
 
 export default function Hero({ setActiveSection }: HeroProps) {
@@ -99,7 +101,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
           <div className="flex items-center gap-3">
             <div className="w-8 h-[1px] bg-white/50" />
             <p className="text-xs font-mono tracking-[0.3em] text-white/50 uppercase">
-              Portfolio · 2025
+              Portfolio · 2026
             </p>
           </div>
 
@@ -199,7 +201,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
 
             {/* Year tag */}
             <div className="absolute -top-4 right-0 bg-[#080808] border border-white/20 px-4 py-2">
-              <span className="text-xs font-mono text-white/50 tracking-widest">2025</span>
+              <span className="text-xs font-mono text-white/50 tracking-widest">2026</span>
             </div>
           </div>
         </div>

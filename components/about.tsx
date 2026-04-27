@@ -103,7 +103,7 @@ export default function About() {
             {[
               { value: '2+', label: 'Years of Experience', desc: 'Consistent learning since day one' },
               { value: '20+', label: 'Projects Completed', desc: 'Web, mobile, and backend systems' },
-              { value: '5+', label: 'Events & Training', desc: 'Teaching, speaking, contributing' },
+              { value: '10+', label: 'Events & Training', desc: 'Teaching, speaking, contributing' },
             ].map((stat, i) => (
               <div key={i} className="group border border-white/8 hover:border-white/20 transition-all duration-300 p-8">
                 <div className="text-5xl font-black text-white tracking-tight mb-1">{stat.value}</div>
